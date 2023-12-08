@@ -1,0 +1,3 @@
+print("Hello from ejemplo")
+vim.g.mapleader = ' '
+vim.keymap.set("n", "<leader>pp", vim.cmd.qa)

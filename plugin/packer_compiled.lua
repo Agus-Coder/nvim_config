@@ -74,20 +74,25 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ale = {
+    loaded = true,
+    path = "/home/august/.local/share/nvim/site/pack/packer/start/ale",
+    url = "https://github.com/dense-analysis/ale"
+  },
   ["coc.nvim"] = {
     loaded = true,
     path = "/home/august/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
-  ["denite.nvim"] = {
-    loaded = true,
-    path = "/home/august/.local/share/nvim/site/pack/packer/start/denite.nvim",
-    url = "https://github.com/Shougo/denite.nvim"
-  },
   gruvbox = {
     loaded = true,
     path = "/home/august/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/morhetz/gruvbox"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/august/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   nerdtree = {
     loaded = true,
@@ -99,10 +104,25 @@ _G.packer_plugins = {
     path = "/home/august/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
   },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/home/august/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/august/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
+  },
   ["nvim-yarp"] = {
     loaded = true,
     path = "/home/august/.local/share/nvim/site/pack/packer/start/nvim-yarp",
     url = "https://github.com/roxma/nvim-yarp"
+  },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/august/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -138,6 +158,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/august/.local/share/nvim/site/pack/packer/start/vim-javascript",
     url = "https://github.com/pangloss/vim-javascript"
+  },
+  ["vim-nerdtree-tabs"] = {
+    loaded = true,
+    path = "/home/august/.local/share/nvim/site/pack/packer/start/vim-nerdtree-tabs",
+    url = "https://github.com/jistr/vim-nerdtree-tabs"
+  },
+  ["vim-perl"] = {
+    loaded = true,
+    path = "/home/august/.local/share/nvim/site/pack/packer/start/vim-perl",
+    url = "https://github.com/vim-perl/vim-perl"
   },
   ["vim-surround"] = {
     loaded = true,
