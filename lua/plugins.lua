@@ -2,7 +2,8 @@ vim.cmd [[packadd packer.nvim]]
 
 -- Packer configuration and plugins
 return require('packer').startup(function(use)
-    use "norcalli/nvim-colorizer.lua"
+    use 'flazz/vim-colorschemes'
+    use 'vim-airline/vim-airline-themes'
     use "lukas-reineke/indent-blankline.nvim"
     use 'vim-perl/vim-perl'
     use 'dense-analysis/ale'
@@ -11,10 +12,10 @@ return require('packer').startup(function(use)
     use 'navarasu/onedark.nvim'
     use 'windwp/nvim-autopairs'
     use 'pangloss/vim-javascript'
-    use 'morhetz/gruvbox'
+    -- use 'morhetz/gruvbox'
     use 'wbthomason/packer.nvim'
-    use 'roxma/nvim-yarp'
-    use 'roxma/vim-hug-neovim-rpc'
+    -- use 'roxma/nvim-yarp'
+    -- use 'roxma/vim-hug-neovim-rpc'
     use 'preservim/nerdtree'
     use 'ryanoasis/vim-devicons'
     use 'tpope/vim-commentary'
@@ -23,6 +24,7 @@ return require('packer').startup(function(use)
     use 'neoclide/coc.nvim'
     use 'mg979/vim-visual-multi'
     use 'tpope/vim-surround'
+    use 'akinsho/bufferline.nvim'
 end)
 
 

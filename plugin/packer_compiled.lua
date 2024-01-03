@@ -79,15 +79,15 @@ _G.packer_plugins = {
     path = "/home/august/.local/share/nvim/site/pack/packer/start/ale",
     url = "https://github.com/dense-analysis/ale"
   },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/home/august/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["coc.nvim"] = {
     loaded = true,
     path = "/home/august/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
-  },
-  gruvbox = {
-    loaded = true,
-    path = "/home/august/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/morhetz/gruvbox"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
@@ -104,20 +104,10 @@ _G.packer_plugins = {
     path = "/home/august/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
   },
-  ["nvim-colorizer.lua"] = {
-    loaded = true,
-    path = "/home/august/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
-    url = "https://github.com/norcalli/nvim-colorizer.lua"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/august/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-yarp"] = {
-    loaded = true,
-    path = "/home/august/.local/share/nvim/site/pack/packer/start/nvim-yarp",
-    url = "https://github.com/roxma/nvim-yarp"
   },
   ["onedark.nvim"] = {
     loaded = true,
@@ -139,6 +129,16 @@ _G.packer_plugins = {
     path = "/home/august/.local/share/nvim/site/pack/packer/start/vim-airline",
     url = "https://github.com/vim-airline/vim-airline"
   },
+  ["vim-airline-themes"] = {
+    loaded = true,
+    path = "/home/august/.local/share/nvim/site/pack/packer/start/vim-airline-themes",
+    url = "https://github.com/vim-airline/vim-airline-themes"
+  },
+  ["vim-colorschemes"] = {
+    loaded = true,
+    path = "/home/august/.local/share/nvim/site/pack/packer/start/vim-colorschemes",
+    url = "https://github.com/flazz/vim-colorschemes"
+  },
   ["vim-commentary"] = {
     loaded = true,
     path = "/home/august/.local/share/nvim/site/pack/packer/start/vim-commentary",
@@ -148,11 +148,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/august/.local/share/nvim/site/pack/packer/start/vim-devicons",
     url = "https://github.com/ryanoasis/vim-devicons"
-  },
-  ["vim-hug-neovim-rpc"] = {
-    loaded = true,
-    path = "/home/august/.local/share/nvim/site/pack/packer/start/vim-hug-neovim-rpc",
-    url = "https://github.com/roxma/vim-hug-neovim-rpc"
   },
   ["vim-javascript"] = {
     loaded = true,

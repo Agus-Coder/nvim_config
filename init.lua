@@ -4,6 +4,14 @@ require('npairs')
 require('ejemplo_directorio')
 require('conquer')
 require('ale')
+
+vim.opt.termguicolors = true
+--require("bufferline").setup{
+--	options = {
+--		separator_style = "slant"
+--	}
+--}
+
 -- CTRL + C to copy in any mode
 vim.keymap.set('n', '<C-c>', '"+y', { noremap = true })
 vim.keymap.set('v', '<C-c>', '"+y', { noremap = true })   
@@ -24,6 +32,7 @@ vim.g.coc_global_extensions = {
   'coc-html', 'coc-snippets'
 }
 
+vim.g.airline_powerline_fonts = 1
 vim.g.NERDTreeChDirMode = 2
 
 vim.cmd('autocmd FileType javascript setlocal shiftwidth=2')
