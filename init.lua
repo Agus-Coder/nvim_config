@@ -2,10 +2,8 @@ vim.g.mapleader = ' '
 require('plugins')
 require('npairs')
 require('ejemplo_directorio')
-require('conquer')
-require('ale')
 
-vim.opt.termguicolors = true
+--vim.opt.termguicolors = true
 --require("bufferline").setup{
 --	options = {
 --		separator_style = "slant"
@@ -43,10 +41,6 @@ vim.cmd("autocmd FileType perl setlocal equalprg=perltidy\\ -st")
 -- Use <Tab> for trigger completion and navigate completion menu
 -- vim.cmd('inoremap <silent><expr> <Tab> pumvisible() ? "\\<C-n>" : "\\<Tab>"')
 -- vim.cmd('inoremap <silent><expr> <S-Tab> pumvisible() ? "\\<C-p>" : "\\<S-Tab>"')
-
--- Set leader key for CoC commands
-vim.cmd('nmap <leader>cf <Plug>(coc-fix-current)')
-vim.cmd('nmap <leader>ca <Plug>(coc-codeaction)')
 
 -- Auto open NERDTree when Neovim starts
 vim.cmd([[autocmd VimEnter * NERDTree]])
@@ -100,11 +94,10 @@ require("toggleterm").setup{
   shell = vim.o.shell, -- Change the default shell
 }
 
-
-require('onedark').setup {
-    style = 'darker'
-}
-require('onedark').load()
-require'lspconfig'.perlpls.setup{}
-
 require("ibl").setup()
+
+
+require("onedark").setup {
+	style = 'warmer'
+}
+require("onedark").load()

@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/august/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/august/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/august/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/august/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/august/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/home/august/.cache/nvim/packer_hererocks/2.1.1692716794/share/lua/5.1/?.lua;/home/august/.cache/nvim/packer_hererocks/2.1.1692716794/share/lua/5.1/?/init.lua;/home/august/.cache/nvim/packer_hererocks/2.1.1692716794/lib/luarocks/rocks-5.1/?.lua;/home/august/.cache/nvim/packer_hererocks/2.1.1692716794/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/august/.cache/nvim/packer_hererocks/2.1.1692716794/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -74,20 +74,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ale = {
-    loaded = true,
-    path = "/home/august/.local/share/nvim/site/pack/packer/start/ale",
-    url = "https://github.com/dense-analysis/ale"
-  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/home/august/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
-  },
-  ["coc.nvim"] = {
-    loaded = true,
-    path = "/home/august/.local/share/nvim/site/pack/packer/start/coc.nvim",
-    url = "https://github.com/neoclide/coc.nvim"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
@@ -103,16 +93,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/august/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
-  },
-  ["nvim-lspconfig"] = {
-    loaded = true,
-    path = "/home/august/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
-    url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["onedark.nvim"] = {
-    loaded = true,
-    path = "/home/august/.local/share/nvim/site/pack/packer/start/onedark.nvim",
-    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -133,11 +113,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/august/.local/share/nvim/site/pack/packer/start/vim-airline-themes",
     url = "https://github.com/vim-airline/vim-airline-themes"
-  },
-  ["vim-colorschemes"] = {
-    loaded = true,
-    path = "/home/august/.local/share/nvim/site/pack/packer/start/vim-colorschemes",
-    url = "https://github.com/flazz/vim-colorschemes"
   },
   ["vim-commentary"] = {
     loaded = true,
