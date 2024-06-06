@@ -1,34 +1,52 @@
 vim.g.mapleader = ' '
+vim.opt.cursorcolumn = true
+vim.opt.cursorline = true
 require('plugins')
 require('npairs')
 require('ejemplo_directorio')
 
---vim.opt.termguicolors = true
---require("bufferline").setup{
---	options = {
---		separator_style = "slant"
---	}
---}
-
--- CTRL + C to copy in any mode
-vim.keymap.set('n', '<C-c>', '"+y', { noremap = true })
-vim.keymap.set('v', '<C-c>', '"+y', { noremap = true })   
-vim.keymap.set('o', '<C-c>', '"+y', { noremap = true })
-  
--- CTRL + V to paste in any mode 
-vim.keymap.set('n', '<C-v>', '"+p', { noremap = true }) 
-vim.keymap.set('i', '<C-v>', '<Esc>"+pa', { noremap = true })
-vim.keymap.set('v', '<C-v>', '"+p', { noremap = true })
-
--- CTRL + X to cut in any mode
-vim.keymap.set('n', '<C-x>', '"+d', { noremap = true })
-vim.keymap.set('v', '<C-x>', '"+d', { noremap = true })
-vim.keymap.set('o', '<C-x>', '"+d', { noremap = true })
-
-vim.g.coc_global_extensions = {
-  'coc-tsserver', 'coc-eslint', 'coc-json', 'coc-css',
-  'coc-html', 'coc-snippets'
+require('nvim-treesitter.configs').setup {
+	ensure_installed = { "c" },
+	highlight = {
+		enable = true,
+	},
 }
+
+require('lint').linters_by_ft = {
+  c = {'clangtidy',}
+}
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  callback = function()
+    require("lint").try_lint()
+  end,
+})
+
+require("conform").setup({
+  formatters_by_ft = {
+    c = { "clang-format " }
+  }
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf })
+  end,
+})
+
+vim.api.nvim_set_keymap('i', '<C-[>', '<Esc>', { noremap = true })
+
+vim.api.nvim_set_keymap(
+    "n",
+    "<space>cc",
+   ':execute("!gnome-terminal -- bash -c \'gcc " . shellescape("%") . " -o " . shellescape("%<") . " && ./" . shellescape("%<") . "\'")<CR>',
+    { noremap = true }
+)
+
+vim.opt.shiftwidth = 4
+vim.opt.tabstop    = 4
+vim.opt.expandtab  = true
 
 vim.g.airline_powerline_fonts = 1
 vim.g.NERDTreeChDirMode = 2
@@ -38,25 +56,13 @@ vim.cmd('autocmd FileType javascript setlocal shiftwidth=2')
 vim.cmd('filetype plugin indent on')
 vim.cmd("autocmd FileType perl setlocal equalprg=perltidy\\ -st")
 
--- Use <Tab> for trigger completion and navigate completion menu
--- vim.cmd('inoremap <silent><expr> <Tab> pumvisible() ? "\\<C-n>" : "\\<Tab>"')
--- vim.cmd('inoremap <silent><expr> <S-Tab> pumvisible() ? "\\<C-p>" : "\\<S-Tab>"')
-
--- Auto open NERDTree when Neovim starts
-vim.cmd([[autocmd VimEnter * NERDTree]])
-
--- Show hidden files in NERDTree
--- vim.g.NERDTreeShowHidden=1
-
--- Set color scheme
--- vim.cmd [[colorscheme gruvbox]]
-
 -- Set the font for vim-devicons
 vim.g['devicons_font'] = 'FiraCode Nerd Font'
 
 -- Set autoindent and number
 vim.opt.autoindent = true
 vim.opt.number = true
+vim.opt.relativenumber = true
 
 vim.keymap.set('n', '<space>w', '<cmd>:w<cr>')
 vim.keymap.set('n', '<space>q', '<cmd>:q<cr>')
@@ -67,17 +73,6 @@ vim.keymap.set('n', '<leader>t', ':NERDTreeToggle<cr>', { noremap = true, silent
 local packer_exists, packer = pcall(require, 'packer')
 
 local npairs = require('nvim-autopairs')
-
--- Enable autopairs
---
--- npairs.setup()
-
--- Enable autopairs for JavaScript
---require('nvim-autopairs.completion.compe').setup({
---    map_cr = true, -- Map <CR> in insert mode
---    map_complete = true -- Insert `(` and `)` automatically in completion mode
---})
-
 
 require("toggleterm").setup{
   size = 20,
@@ -95,7 +90,6 @@ require("toggleterm").setup{
 }
 
 require("ibl").setup()
-
 
 require("onedark").setup {
 	style = 'warmer'
