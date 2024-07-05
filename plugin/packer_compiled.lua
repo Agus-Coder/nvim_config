@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/august/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/august/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
   ["conform.nvim"] = {
     loaded = true,
     path = "/home/august/.local/share/nvim/site/pack/packer/start/conform.nvim",
@@ -89,6 +94,16 @@ _G.packer_plugins = {
     path = "/home/august/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/home/august/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/home/august/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
+  },
   nerdtree = {
     loaded = true,
     path = "/home/august/.local/share/nvim/site/pack/packer/start/nerdtree",
@@ -98,6 +113,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/august/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
+  },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/home/august/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lint"] = {
     loaded = true,

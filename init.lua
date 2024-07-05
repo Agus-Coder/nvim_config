@@ -4,6 +4,11 @@ vim.opt.cursorline = true
 require('plugins')
 require('npairs')
 require('ejemplo_directorio')
+require("mason").setup()
+require("mason-lspconfig").setup({
+    ensure_installed = {"tsserver"}
+})
+require("lspconfig").tsserver.setup({})
 
 require('nvim-treesitter.configs').setup {
 	ensure_installed = { "c" },
@@ -35,7 +40,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
-vim.api.nvim_set_keymap('i', '<C-[>', '<Esc>', { noremap = true })
+vim.api.nvim_set_keymap('i', '<C-\\>', '<Esc>', { noremap = true })
 
 vim.api.nvim_set_keymap(
     "n",
@@ -95,3 +100,6 @@ require("onedark").setup {
 	style = 'warmer'
 }
 require("onedark").load()
+
+
+require("completions")
