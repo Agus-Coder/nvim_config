@@ -1,6 +1,8 @@
 vim.g.mapleader = ' '
 vim.opt.cursorcolumn = true
 vim.opt.cursorline = true
+
+vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true, silent = true })
 require('plugins')
 require('npairs')
 require('ejemplo_directorio')
@@ -40,7 +42,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
-vim.api.nvim_set_keymap('i', '<C-\\>', '<Esc>', { noremap = true })
+-- vim.api.nvim_set_keymap('i', '<C-\\>', '<Esc>', { noremap = true })
 
 vim.api.nvim_set_keymap(
     "n",
