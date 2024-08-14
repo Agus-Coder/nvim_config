@@ -1,46 +1,33 @@
 vim.g.mapleader = ' '
 vim.opt.cursorcolumn = true
 vim.opt.cursorline = true
+--
+require("config.lazy");
 
+require'nvim-treesitter.configs'.setup {
+    ensure_installed = { "java" },
+}
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true, silent = true })
-require('plugins')
 require('npairs')
 require('ejemplo_directorio')
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = {"tsserver"}
+    ensure_installed = {'tsserver', 'java_language_server'}
 })
 require("lspconfig").tsserver.setup({})
+require("lspconfig").java_language_server.setup({})
 
-require('nvim-treesitter.configs').setup {
-	ensure_installed = { "c" },
-	highlight = {
-		enable = true,
-	},
-}
 
-require('lint').linters_by_ft = {
-  c = {'clangtidy',}
-}
+--require('lint').linters_by_ft = {
+--  c = {'clangtidy',}
+--}
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-  callback = function()
-    require("lint").try_lint()
-  end,
-})
+--vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+--  callback = function()
+--    require("lint").try_lint()
+--  end,
+--})
 
-require("conform").setup({
-  formatters_by_ft = {
-    c = { "clang-format " }
-  }
-})
-
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
-  callback = function(args)
-    require("conform").format({ bufnr = args.buf })
-  end,
-})
 
 -- vim.api.nvim_set_keymap('i', '<C-\\>', '<Esc>', { noremap = true })
 
@@ -76,8 +63,6 @@ vim.keymap.set('n', '<space>q', '<cmd>:q<cr>')
 vim.keymap.set('n', '<space>wq', '<cmd>:wq<cr>')
 
 vim.keymap.set('n', '<leader>t', ':NERDTreeToggle<cr>', { noremap = true, silent = true })
--- Require Packer
-local packer_exists, packer = pcall(require, 'packer')
 
 local npairs = require('nvim-autopairs')
 
@@ -91,7 +76,7 @@ require("toggleterm").setup{
   start_in_insert = true,
   insert_mappings = true, -- ToggleTerm will insert text for you
   persist_size = true,
-  direction = 'horizontal', -- | 'horizontal' | 'window' | 'float',
+  direction = 'float', -- | 'horizontal' | 'window' | 'float',
   close_on_exit = true,
   shell = vim.o.shell, -- Change the default shell
 }
@@ -105,3 +90,19 @@ require("onedark").load()
 
 
 require("completions")
+
+
+
+local null_ls = require("null-ls")
+
+null_ls.setup({
+  sources = {
+    null_ls.builtins.formatting.prettier,
+  },
+})
+
+vim.api.nvim_set_keymap("n", "<leader>p", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 5000 })<CR>", { noremap = true, silent = true })
+
+
+
+

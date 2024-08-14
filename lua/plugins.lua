@@ -1,35 +1,43 @@
-vim.cmd [[packadd packer.nvim]]
+return {
+-- nvim-treesitter
+"nvim-treesitter/nvim-treesitter",
+-- airline
+"vim-airline/vim-airline",
+"vim-airline/vim-airline-themes",
+-- nerdtree
+"preservim/nerdtree",
+"ryanoasis/vim-devicons",
+-- color
+"navarasu/onedark.nvim",
+-- editing
+"windwp/nvim-autopairs",
+"tpope/vim-surround",
+"tpope/vim-commentary",
+"lukas-reineke/indent-blankline.nvim",
+-- lsp
+"mfussenegger/nvim-lint",
+"williamboman/mason.nvim",
+"neovim/nvim-lspconfig",
+"williamboman/mason-lspconfig.nvim",
+"hrsh7th/nvim-cmp",
+"hrsh7th/cmp-nvim-lsp",
+"hrsh7th/cmp-buffer",
+"hrsh7th/cmp-path",
+"hrsh7th/cmp-cmdline",
+"akinsho/bufferline.nvim",
+{"akinsho/toggleterm.nvim", version = "*", config = true},
+-- tmux
+"christoomey/vim-tmux-navigator",
+"mfussenegger/nvim-jdtls",
 
--- Packer configuration and plugins
-return require('packer').startup(function(use)
-    use 'vim-airline/vim-airline-themes'
-    use "lukas-reineke/indent-blankline.nvim"
-    use 'jistr/vim-nerdtree-tabs'
-    use 'christoomey/vim-tmux-navigator'
-    use 'tiagofumo/vim-nerdtree-syntax-highlight'
-    use 'navarasu/onedark.nvim'
-    use 'windwp/nvim-autopairs'
-    use 'nvim-treesitter/nvim-treesitter'
-    use 'pangloss/vim-javascript'
-    use 'wbthomason/packer.nvim'
-    use 'preservim/nerdtree'
-    use 'ryanoasis/vim-devicons'
-    use 'tpope/vim-commentary'
-    use 'williamboman/mason.nvim'
-    use 'neovim/nvim-lspconfig'
-    use 'williamboman/mason-lspconfig.nvim'
-    use 'vim-airline/vim-airline'
-    use 'akinsho/toggleterm.nvim'
-    use 'mg979/vim-visual-multi'
-    use 'tpope/vim-surround'
-    use 'akinsho/bufferline.nvim'
-    use 'mfussenegger/nvim-lint'
-    use 'stevearc/conform.nvim'
-    use "hrsh7th/nvim-cmp" -- Completion plugin
-    use "hrsh7th/cmp-nvim-lsp" -- LSP source for nvim-cmp
---    use "hrsh7th/cmp-buffer" -- Buffer completions
---    use "hrsh7th/cmp-path" -- Path completions
---    use "hrsh7th/cmp-cmdline" -- Command line completions
-end)
+'jose-elias-alvarez/null-ls.nvim',
+'nvim-lua/plenary.nvim'
+}
+
+--    use 'jistr/vim-nerdtree-tabs'
+--
+--    use 'tiagofumo/vim-nerdtree-syntax-highlight'
+--    use 'pangloss/vim-javascript'
+--    use ''
 
 
