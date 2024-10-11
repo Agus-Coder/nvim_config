@@ -1,7 +1,7 @@
 vim.g.mapleader = ' '
 vim.opt.cursorcolumn = true
 vim.opt.cursorline = true
---
+
 require("config.lazy");
 
 require'nvim-treesitter.configs'.setup {
@@ -9,12 +9,11 @@ require'nvim-treesitter.configs'.setup {
 }
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true, silent = true })
 require('npairs')
-require('ejemplo_directorio')
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = {'tsserver', 'java_language_server'}
+    ensure_installed = {'ts_ls', 'java_language_server'}
 })
-require("lspconfig").tsserver.setup({})
+require("lspconfig").ts_ls.setup({})
 require("lspconfig").java_language_server.setup({})
 
 
@@ -103,6 +102,17 @@ null_ls.setup({
 
 vim.api.nvim_set_keymap("n", "<leader>p", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 5000 })<CR>", { noremap = true, silent = true })
 
+-- Define the ToggleFold function in Lua
+function ToggleFold()
+  if vim.fn.foldclosed('.') == -1 then
+    vim.cmd('normal! $V%zf')
+  else
+    vim.cmd('normal! zo')
+  end
+end
+
+-- Map the function to the "f" key in normal mode
+vim.api.nvim_set_keymap('n', '<leader>f', ':lua ToggleFold()<CR>', { noremap = true, silent = true })
 
 
 
