@@ -33,11 +33,3 @@ return {
 'jose-elias-alvarez/null-ls.nvim',
 'nvim-lua/plenary.nvim'
 }
-
---    use 'jistr/vim-nerdtree-tabs'
---
---    use 'tiagofumo/vim-nerdtree-syntax-highlight'
---    use 'pangloss/vim-javascript'
---    use ''
-
-
