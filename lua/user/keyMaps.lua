@@ -17,13 +17,16 @@ km(
 )
 -- Save, quit
 km('n', '<space>w', '<cmd>:w<cr>')
-km('n', '<space>q', '<cmd>:q<cr>')
+km('n', '<space>q', '<cmd>:bd<cr>')
 km('n', '<space>wq', '<cmd>:wq<cr>')
 
-km('n', '<leader>t', ':NERDTreeToggle<cr>', opts)
+km('n', '<leader>t', ':Neotree toggle=true<cr>', opts)
 km('n', '<leader>e', ':Lexplore 20<cr>', opts)
 km("n", "<leader>p", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 5000 })<CR>", opts)
 km('n', '<leader>f', ':lua ToggleFold()<CR>', opts)
+km('n', '<leader>k', ':BufferLineCycleNext<CR>', opts)
+km('n', '<leader>j', ':BufferLineCyclePrev<CR>', opts)
+km('n', '<leader>M', ':Mason<CR>', opts)
 
 -- Change window size
 km("n", "<C-w>", ":resize -2<CR>", opts)
