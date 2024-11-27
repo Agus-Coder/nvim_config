@@ -23,10 +23,12 @@ km('n', '<space>wq', '<cmd>:wq<cr>')
 km('n', '<leader>t', ':Neotree toggle=true<cr>', opts)
 km('n', '<leader>e', ':Lexplore 20<cr>', opts)
 km("n", "<leader>p", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 5000 })<CR>", opts)
-km('n', '<leader>f', ':lua ToggleFold()<CR>', opts)
+km('n', '<leader>a', ':lua ToggleFold()<CR>', opts)
 km('n', '<leader>k', ':BufferLineCycleNext<CR>', opts)
 km('n', '<leader>j', ':BufferLineCyclePrev<CR>', opts)
 km('n', '<leader>M', ':Mason<CR>', opts)
+km('n', '<leader>ff', ':Telescope find_files<CR>', opts)
+km('n', '<leader>fg', ':Telescope live_grep<CR>', opts)
 
 -- Change window size
 km("n", "<C-w>", ":resize -2<CR>", opts)

@@ -1,7 +1,7 @@
 return {
     "olimorris/onedarkpro.nvim",
     -- nvim-treesitter
-    --"nvim-treesitter/nvim-treesitter",
+    "nvim-treesitter/nvim-treesitter",
     -- airline
     "vim-airline/vim-airline",
     "vim-airline/vim-airline-themes",
@@ -26,7 +26,7 @@ return {
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-cmdline",
     "akinsho/bufferline.nvim",
-    {"akinsho/toggleterm.nvim", version = "*", config = true},
+    { "akinsho/toggleterm.nvim", version = "*", config = true },
     -- tmux
     "christoomey/vim-tmux-navigator",
     "mfussenegger/nvim-jdtls",
@@ -42,4 +42,14 @@ return {
             "MunifTanjim/nui.nvim",
         }
     },
+    'L3MON4D3/LuaSnip',
+    {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.8',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'BurntSushi/ripgrep',
+        }
+    },
+
 }

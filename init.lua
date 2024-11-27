@@ -9,9 +9,10 @@ local npairs = require('npairs')
 
 mason.setup()
 require("mason-lspconfig").setup({
-    ensure_installed = {'ts_ls'}
+    ensure_installed = { 'ts_ls' }
 })
 require("lspconfig").ts_ls.setup({})
+require("lspconfig").lua_ls.setup({})
 
 vim.cmd('autocmd FileType javascript setlocal shiftwidth=2')
 
@@ -20,7 +21,7 @@ vim.cmd("autocmd FileType perl setlocal equalprg=perltidy\\ -st")
 
 local npairs = require('nvim-autopairs')
 
-require("toggleterm").setup{
+require("toggleterm").setup {
     size = 20,
     open_mapping = [[<c-t>]],
     hide_numbers = true,
@@ -41,6 +42,11 @@ require("onedarkpro").setup {
     options = {
         cursorline = true,
         cursorcolumn = true,
+    },
+    colors = {
+        onedark = {
+            bg = "#1a1d24",
+        }
     }
 }
 require("onedarkpro").load()
@@ -67,9 +73,6 @@ function ToggleFold()
     end
 end
 
-
-vim.opt.termguicolors = true
-
 require("neo-tree").setup({
     window = {
         width = 30,
@@ -77,7 +80,7 @@ require("neo-tree").setup({
 })
 
 
-buffLine .setup{
+buffLine.setup {
     options = {
         buffer_close_icon = '󰅖',
         modified_icon = '▲ ',
@@ -85,10 +88,8 @@ buffLine .setup{
         numbers = "none",
         color_icons = true,
         diagnostics = "nvim_lsp",
---        indicator = {
---            style = 'underline',
---        },
+        --        indicator = {
+        --            style = 'underline',
+        --        },
     },
 }
-
-
